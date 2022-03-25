@@ -1,6 +1,7 @@
 from random import choice
-from turtle import *
-
+from turtle import Turtle, bgcolor, clear, up, goto, dot
+from turtle import update, ontimer, setup, hideturtle
+from turtle import tracer, listen, onkey, done
 from freegames import floor, vector
 
 state = {'score': 0}
@@ -14,7 +15,6 @@ ghosts = [
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
 ]
-# fmt: off
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -37,7 +37,6 @@ tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
-# fmt: on
 
 
 def square(x, y):
@@ -46,11 +45,9 @@ def square(x, y):
     path.goto(x, y)
     path.down()
     path.begin_fill()
-
     for count in range(4):
         path.forward(20)
         path.left(90)
-
     path.end_fill()
 
 
