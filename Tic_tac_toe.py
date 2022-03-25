@@ -31,15 +31,17 @@ def drawx(x, y):
 def drawo(x, y):
     """Draw O player."""
     up()
-    goto(x + 22, y + 4)
+    goto(x+15,y)
     down()
+    print("Valor de x: " + str(x))
+    print("Valor de y: " + str(y))
     pencolor('red')
-    circle(17)
+    circle(15)
 
 
 def floor(value):
     """Round value down to grid with square size 133."""
-    return ((value + 200) // 53) * 53 - 200
+    return ((value + 200) // 44) * 44 - 200
 
 
 state = {'player': 0}
