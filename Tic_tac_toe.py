@@ -23,21 +23,23 @@ def grid():
 
 def drawx(x, y):
     """Draw X player."""
-    line(x, y, x + 133, y + 133)
-    line(x, y + 133, x + 133, y)
+    pencolor('blue')
+    line(x, y , x+40 , y+40)
+    line(x, y+40 , x+40 , y)
 
 
 def drawo(x, y):
     """Draw O player."""
     up()
-    goto(x + 67, y + 5)
+    goto(x + 22, y + 4)
     down()
-    circle(62)
+    pencolor('red')
+    circle(17)
 
 
 def floor(value):
     """Round value down to grid with square size 133."""
-    return ((value + 200) // 133) * 133 - 200
+    return ((value + 200) // 53) * 53 - 200
 
 
 state = {'player': 0}
@@ -54,11 +56,12 @@ def tap(x, y):
     update()
     state['player'] = not player
 
-
 setup(420, 420, 370, 0)
+
 hideturtle()
 tracer(False)
 grid()
 update()
 onscreenclick(tap)
+
 done()
