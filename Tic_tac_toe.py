@@ -21,25 +21,23 @@ def grid():
     line(-200, -67, 200, -67)
     line(-200, 67, 200, 67)
 
-
+    #Lo que se edito aqupi fue ajustar la posicion de las x y y porque la funcion utiliza los dos puntos de referencia
+    #para poder dibujar la linea, ademas que con la funcion pencolor se cambio el color de la figura
 def drawx(x, y):
     """Draw X player."""
-    # print("Valor de x: " + str(x))
-    # print("Valor de y: " + str(y))
 
     pencolor('blue')
     line(x, y , x+40 , y+40)
     line(x, y+40 , x+40 , y)
 
-
+    #Parecido a la función pasada lo que tambien se edito fue que la coordenada x y el tamaño del circulo
+    #ademas que tambien la funcion pencolor se cambio el color 
 def drawo(x, y):
     """Draw O player."""
     up()
 
     goto(x+15,y)
     down()
-    # print("Valor de x: " + str(x))
-    # print("Valor de y: " + str(y))
     pencolor('red')
     circle(15)
 
@@ -58,15 +56,14 @@ def tap(x, y):
     global c
     global quadx
     global quady
-    i= 0
-    v = 0
-
 
 
     x = int(floor(x))
     y = int(floor(y))
-    # print("Valor de x: " + str(x))
-    # print("Valor de y: " + str(y))
+
+    #Aqui es donde realiza la comparacion de las posiciones, si ya existe te envia un mensaje de dato invalido 
+    #y no te deja poner una figura. En caso de que sea correcto, te permite poner la figura y las coordenadas 
+    #se guardan en la matriz
 
     if x in quadx and y in quady:
         print("Dato Invalido")
@@ -82,6 +79,10 @@ def tap(x, y):
     draw(x, y)
     update()
     state['player'] = not player
+
+#Se implemento un contador que se usara más adelante en el código para insertar los datos en las matrices
+#Y las matrices se crearon con el fin de guardar las posiciones de las figuras ya presionadas 
+
 c= 0
 quadx=np.zeros (shape = (1,9))
 quady=np.zeros (shape = (1,9))
