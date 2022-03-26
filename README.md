@@ -2,7 +2,7 @@
 Video juegos de la semana tec, Herramientas digitales
 
 ## Pacman
-Para poder hacer uso de lo que es este juego 
+Para poder hacer uso de lo que es este juego <br>
 1. Se tiene que clonar el repositorio
 ´git clone https://github.com/ManuelNer1/VideoGames.git ´
 2. Entrar a nuestra carpeta en la computadora
